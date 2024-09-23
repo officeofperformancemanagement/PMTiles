@@ -11,8 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/systemed/tilemaker:master
     permissions:
       contents: write
     name: download and save data
