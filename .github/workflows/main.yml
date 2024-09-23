@@ -32,7 +32,7 @@ jobs:
           # Optional, other arguments
           # If not being set, default to '--verbose'
           # extra: --threads 0
-          extra: --bbox=-86.98844491281493,34.014883133571566,-82.9877549774713,36.99317452988294
+          extra: --bbox='-86.98844491281493,34.014883133571566,-82.9877549774713,36.99317452988294'
 
       # - run: bash main.sh
 
