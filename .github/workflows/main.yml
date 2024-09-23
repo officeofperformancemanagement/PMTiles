@@ -21,6 +21,10 @@ jobs:
 
       - run: curl --output osmconvert http://m.m.i24.cc/osmconvert64
 
+      - run: chmod +x ./osmconvert
+
+      - run: ./osmconvert --help
+
       - run: ./osmconvert chattanooga.xml -o=chattanooga.pbf
 
       - uses: systemed/tilemaker@v2.0.0
