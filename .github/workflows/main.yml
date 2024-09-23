@@ -17,6 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - run: bash main.sh
+
       - run: apt install osmctools
 
       - run: osmconvert ./chattanooga.xml ./chattanooga.pbf
