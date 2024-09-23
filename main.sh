@@ -7,7 +7,7 @@ set -e
 curl --output chattanooga.xml "https://overpass-api.de/api/interpreter?data=%2F%2F%5Bout%3Acsv%28%27name%27%2C%3A%3Alat%2C%3A%3Alon%2C%27cuisine%27%3Btrue%3B%27%2C%27%29%5D%3B%0A%0Aarea%0A%20%20%5B%22wikidata%22%3D%22Q186702%22%5D%0A%20%20%5B%22name%22%3D%22Chattanooga%22%5D-%3E.a%3B%0A%0Anwr%28area.a%29%3B%0A%0A%2F%2F%20calculate%20centroid%20of%20ways%20and%20relations%0Aout%20body%20center%3B"
 
 # create dataset using tilemaker
-docker run -it --rm -v $PWD:/data ghcr.io/systemed/tilemaker:master /data/chattanooga.xml --output /data/chattanooga2.pmtiles
+docker run --rm -v $PWD:/data ghcr.io/systemed/tilemaker:master /data/chattanooga.xml --output /data/chattanooga2.pmtiles
 
 # download and extract only pmtiles file
 curl -L https://github.com/protomaps/go-pmtiles/releases/download/v1.21.0/go-pmtiles_1.21.0_Linux_x86_64.tar.gz | tar zx pmtiles
