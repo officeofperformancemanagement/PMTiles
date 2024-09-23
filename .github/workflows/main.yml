@@ -21,7 +21,7 @@ jobs:
 
       - run: apt install osmctools
 
-      - run: osmconvert ./chattanooga.xml ./chattanooga.pbf
+      - run: osmconvert chattanooga.xml -o=chattanooga.pbf
 
       - uses: systemed/tilemaker@v2.0.0
         with:
