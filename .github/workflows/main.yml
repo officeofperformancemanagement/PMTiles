@@ -33,8 +33,8 @@ jobs:
 
       - uses: systemed/tilemaker@v2.0.0
         with:
-          input: ./tennessee-latest.osm.pbf
-          output: ./tennessee-latest.pmtiles
+          input: tennessee-latest.osm.pbf
+          output: tennessee-latest.pmtiles
           # config: ./chattanooga-config.json
           # Optional, same to --process
           # If not being set, default to resources/process-openmaptiles.lua
