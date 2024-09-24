@@ -27,12 +27,14 @@ jobs:
 
       # - run: ./osmconvert chattanooga.xml -o=chattanooga.pbf
 
-      - run: curl --output us-south-latest.osm.pbf https://download.geofabrik.de/north-america/us-south-latest.osm.pbf
+      # - run: curl --output us-south-latest.osm.pbf https://download.geofabrik.de/north-america/us-south-latest.osm.pbf
+
+      - run: curl --output tennessee-latest.osm.pbf https://download.geofabrik.de/north-america/us/tennessee-latest.osm.pbf
 
       - uses: systemed/tilemaker@v2.0.0
         with:
-          input: ./us-south-latest.osm.pbf
-          output: ./us-south-latest.pmtiles
+          input: ./tennessee-latest.osm.pbf
+          output: ./tennessee-latest.pmtiles
           # config: ./chattanooga-config.json
           # Optional, same to --process
           # If not being set, default to resources/process-openmaptiles.lua
