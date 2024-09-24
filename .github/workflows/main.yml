@@ -17,21 +17,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: bash main.sh
+      # - run: bash main.sh
 
-      - run: curl --output osmconvert http://m.m.i24.cc/osmconvert64
+      # - run: curl --output osmconvert http://m.m.i24.cc/osmconvert64
 
-      - run: chmod +x ./osmconvert
+      # - run: chmod +x ./osmconvert
 
-      - run: ./osmconvert --help
+      # - run: ./osmconvert --help
 
-      - run: ./osmconvert chattanooga.xml -o=chattanooga.pbf
+      # - run: ./osmconvert chattanooga.xml -o=chattanooga.pbf
+
+      - run: curl --output us-south-latest.osm.pbf https://download.geofabrik.de/north-america/us-south-latest.osm.pbf
 
       - uses: systemed/tilemaker@v2.0.0
         with:
-          input: ./chattanooga.pbf
-          output: ./chattanooga.pmtiles
-          config: ./chattanooga-config.json
+          input: ./us-south-latest.osm.pbf
+          output: ./us-south-latest.pmtiles
+          # config: ./chattanooga-config.json
           # Optional, same to --process
           # If not being set, default to resources/process-openmaptiles.lua
           # process: /path/to/lua
